@@ -2,13 +2,14 @@ const somar = document.getElementById('somar')
 const subtrair = document.getElementById('subtrair')
 const braco = document.querySelector('#braco')
 
-somar.addEventListener('click', () => {
-    braco.value = parseInt(braco.value) + 1
-})
+somar.addEventListener('click', () => {manipulaDados("somar")})
 
-subtrair.addEventListener('click', () => {
-    braco.value = parseInt(braco.value) - 1
-    if(braco.value <= 0) {
-        braco.value = 0
+subtrair.addEventListener('click', () => {manipulaDados("subtrair")})
+
+function manipulaDados(operacao) {
+    if(operacao === "subtrair") {
+        braco.value = parseInt(braco.value) - 1
+    } else {
+        braco.value = parseInt(braco.value) + 1
     }
-})
+}
