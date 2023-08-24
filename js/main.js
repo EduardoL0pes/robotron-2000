@@ -64,3 +64,10 @@ function atualizaEstatistica(peca) {
         elemento.textContent = Number(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
     });
 }
+
+const mudaCor = document.querySelector('#mudacor')
+const corRobos = document.querySelector('#corRobos')
+
+mudaCor.addEventListener('click', () => {
+
+})

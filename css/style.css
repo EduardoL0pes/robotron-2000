@@ -39,9 +39,9 @@ main {
 
 .robo {
     height: 110%;
-    z-index: 1;
+    z-index: 0;
     position: absolute;
-    left: 7%;
+    left: -2%;
     top: -5%;
 }
 
@@ -50,7 +50,7 @@ main {
     font-weight: 500;
     font-size: 130px;
     position: absolute;
-    bottom: 5rem;
+    bottom: 0rem;
     left: -3rem;
     line-height: 0.8;
     writing-mode: vertical-rl;
@@ -230,4 +230,13 @@ main {
         height: 80vh;
         margin: 10vh auto;
     }
+}
+
+.seta-direita {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-size: 48px;
 }
