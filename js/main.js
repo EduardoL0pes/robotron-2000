@@ -65,9 +65,39 @@ function atualizaEstatistica(peca) {
     });
 }
 
-const mudaCor = document.querySelector('#mudacor')
-const corRobos = document.querySelector('#corRobos')
+const robos = document.querySelectorAll('.robo');
+const btnNext = document.querySelector('#next');
+const btnPrev = document.querySelector('#prev');
 
-mudaCor.addEventListener('click', () => {
-    
-})
+let currentSlide = 0;
+
+function hideSlider() {
+    robos.forEach(item => item.classList.remove('on')) 
+}
+
+function showSlider() {
+    robos[currentSlide].classList.add('on')
+}
+
+function nextSlider() {
+    hideSlider()
+    if(currentSlide === robos.length -1) {
+        currentSlide = 0
+    } else {
+        currentSlide++
+    }
+    showSlider()
+}
+
+function prevSlider() {
+    hideSlider()
+    if(currentSlide === 0) {
+        currentSlide = robos.length -1
+    } else {
+        currentSlide--
+    }
+    showSlider()
+}
+
+btnNext.addEventListener('click', nextSlider)
+btnPrev.addEventListener('click', prevSlider)

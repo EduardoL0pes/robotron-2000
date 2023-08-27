@@ -43,6 +43,12 @@ main {
     position: absolute;
     left: -2%;
     top: -5%;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.on {
+    opacity: 1;
 }
 
 .titulo {
@@ -55,7 +61,7 @@ main {
     line-height: 0.8;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    color: rgba(255,255,255,0.8)
+    color: rgba(255,255,255,0.8);
 }
 
 .box {
@@ -232,11 +238,21 @@ main {
     }
 }
 
-.seta-direita {
+#next {
     position: absolute;
     left: 100%;
     top: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
     font-size: 48px;
+}
+
+#prev {
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    transform: translate(50%, 50%);
+    font-size: 48px;
+    cursor: pointer;
+    z-index: 5;
 }
