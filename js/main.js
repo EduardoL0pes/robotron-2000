@@ -46,20 +46,26 @@ controle.forEach((elemento) => {
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector('[data-contador]')
+    //console.log(controle)
+    //console.log(operacao)
+    let valorAtual = Number(peca.value, 10)
 
     if(operacao === "-") {
-        peca.value = parseInt(peca.value) - 1
+        if(valorAtual > 0){
+            peca.value = valorAtual - 1
+        }
     } else {
-        peca.value = parseInt(peca.value) + 1
+        peca.value = valorAtual + 1
     }
+
 }
 
 function atualizaEstatistica(peca) {
     //console.log(pecas[peca]) teste para verificar se os status do robo aparecem corretamente
 
     estatisticas.forEach( (elemento) => {
-        //console.log(elemento.dataset.estatistica)  teste para verificar se esta percorrendo o elemento html
-        //console.log(elemento.textContent)          teste para verificar o conteudo do texto que nesse caso seria força, energia...
+        //console.log(elemento.dataset.estatistica)  //teste para verificar se esta percorrendo o elemento html
+        //console.log(elemento.textContent)          //teste para verificar o conteudo do texto que nesse caso seria força, energia...
 
         elemento.textContent = Number(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
     });
