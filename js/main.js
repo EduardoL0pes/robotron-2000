@@ -3,14 +3,14 @@ const controle = document.querySelectorAll('[data-controle]')
 const estatisticas = document.querySelectorAll('[data-estatistica]')
 
 const pecas = {
-    "bracos": {
+    "bracos":{
         "forca": 29,
         "poder": 35,
         "energia": -21,
         "velocidade": -5
     },
 
-    "blindagem": {
+    "blindagem":{
         "forca": 41,
         "poder": 20,
         "energia": 0,
@@ -41,6 +41,7 @@ controle.forEach((elemento) => {
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
         //console.log(evento.target.parentNode)
         atualizaEstatistica(evento.target.dataset.pecas)
+        
     })
 }) 
 
@@ -49,6 +50,10 @@ function manipulaDados(operacao, controle) {
     //console.log(controle)
     //console.log(operacao)
     let valorAtual = Number(peca.value, 10)
+
+    console.log("Operação:", operacao);
+    console.log("Valor Atual:", valorAtual);
+    console.log("Peca:", peca.parentNode.dataset.pecas);
 
     if(operacao === "-") {
         if(valorAtual > 0){
@@ -61,13 +66,14 @@ function manipulaDados(operacao, controle) {
 }
 
 function atualizaEstatistica(peca) {
-    //console.log(pecas[peca]) teste para verificar se os status do robo aparecem corretamente
+    //console.log(pecas[peca]) //teste para verificar se os status do robo aparecem corretamente
+    
 
     estatisticas.forEach( (elemento) => {
         //console.log(elemento.dataset.estatistica)  //teste para verificar se esta percorrendo o elemento html
         //console.log(elemento.textContent)          //teste para verificar o conteudo do texto que nesse caso seria força, energia...
 
-        elemento.textContent = Number(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
+        elemento.textContent = Number(elemento.textContent) + pecas[peca][elemento.dataset.estatistica] 
     });
 }
 
