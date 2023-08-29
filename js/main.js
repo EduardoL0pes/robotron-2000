@@ -48,10 +48,10 @@ function manipulaDados(operacao, controle) {
     const peca = controle.querySelector('[data-contador]')
     //console.log(controle)
     //console.log(operacao)
-    let valorAtual = Number(peca.value, 10)
+    let valorAtual = Number(peca.value)
 
-    console.log("Operação:", operacao);
-    console.log("Valor Atual:", valorAtual);
+    //console.log("Operação:", operacao);
+    //console.log("Valor Atual:", valorAtual);
     console.log("Peca:", peca.parentNode.dataset.pecas);
 
     if(operacao === "-") {
@@ -61,12 +61,11 @@ function manipulaDados(operacao, controle) {
     } else {
         peca.value = valorAtual + 1
     }
-}
+} 
 
 function atualizaEstatistica(peca) {
     //console.log(pecas[peca]) //teste para verificar se os status do robo aparecem corretamente
     
-
     estatisticas.forEach( (elemento) => {
         //console.log(elemento.dataset.estatistica)  //teste para verificar se esta percorrendo o elemento html
         //console.log(elemento.textContent)          //teste para verificar o conteudo do texto que nesse caso seria força, energia...
