@@ -1,7 +1,6 @@
 
 const controle = document.querySelectorAll('[data-controle]')
 const estatisticas = document.querySelectorAll('[data-estatistica]')
-
 const pecas = {
     "bracos":{
         "forca": 29,
@@ -40,19 +39,14 @@ controle.forEach((elemento) => {
     elemento.addEventListener('click', (evento) => {
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
         //console.log(evento.target.parentNode)  //retorna a div controle
-        atualizaEstatistica(evento.target.dataset.pecas)
+        atualizaEstatistica(evento.target.dataset.peca)
     })
 }) 
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector('[data-contador]')
-    //console.log(controle)
-    //console.log(operacao)
-    let valorAtual = Number(peca.value)
 
-    //console.log("Operação:", operacao);
-    //console.log("Valor Atual:", valorAtual);
-    console.log("Peca:", peca.parentNode.dataset.pecas);
+    let valorAtual = Number(peca.value)
 
     if(operacao === "-") {
         if(valorAtual > 0){
@@ -65,18 +59,17 @@ function manipulaDados(operacao, controle) {
 
 function atualizaEstatistica(peca) {
     //console.log(pecas[peca]) //teste para verificar se os status do robo aparecem corretamente
-    
     estatisticas.forEach( (elemento) => {
         //console.log(elemento.dataset.estatistica)  //teste para verificar se esta percorrendo o elemento html
         //console.log(elemento.textContent)          //teste para verificar o conteudo do texto que nesse caso seria força, energia...
 
         elemento.textContent = Number(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
-    });
+    })
 }
 
-const robos = document.querySelectorAll('.robo');
-const btnNext = document.querySelector('#next');
-const btnPrev = document.querySelector('#prev');
+const robos = document.querySelectorAll('.robo')
+const btnNext = document.querySelector('#next')
+const btnPrev = document.querySelector('#prev')
 
 let currentSlide = 0;
 
