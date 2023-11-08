@@ -67,6 +67,7 @@ function atualizaEstatistica(peca) {
     })
 }
 
+/****Logica de mudança de cor do Robo****/
 const robos = document.querySelectorAll('.robo')
 const btnNext = document.querySelector('#next')
 const btnPrev = document.querySelector('#prev')
