@@ -2,32 +2,32 @@
 const controle = document.querySelectorAll('[data-controle]')
 const estatisticas = document.querySelectorAll('[data-estatistica]')
 const pecas = {
-    "bracos":{
+    "bracos": {
         "forca": 29,
         "poder": 35,
         "energia": -21,
         "velocidade": -5
     },
 
-    "blindagem":{
+    "blindagem": {
         "forca": 41,
         "poder": 20,
         "energia": 0,
         "velocidade": -20
     },
-    "nucleos":{
+    "nucleos": {
         "forca": 0,
         "poder": 7,
         "energia": 48,
         "velocidade": -24
     },
-    "pernas":{
+    "pernas": {
         "forca": 27,
         "poder": 21,
         "energia": -32,
         "velocidade": 42
     },
-    "foguetes":{
+    "foguetes": {
         "forca": 0,
         "poder": 28,
         "energia": 0,
@@ -41,25 +41,25 @@ controle.forEach((elemento) => {
         //console.log(evento.target.parentNode)  //retorna a div controle
         atualizaEstatistica(evento.target.dataset.peca)
     })
-}) 
+})
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector('[data-contador]')
 
     let valorAtual = Number(peca.value)
 
-    if(operacao === "-") {
-        if(valorAtual > 0){
+    if (operacao === "-") {
+        if (valorAtual > 0) {
             peca.value = valorAtual - 1
         }
     } else {
         peca.value = valorAtual + 1
     }
-} 
+}
 
 function atualizaEstatistica(peca) {
     //console.log(pecas[peca]) //teste para verificar se os status do robo aparecem corretamente
-    estatisticas.forEach( (elemento) => {
+    estatisticas.forEach((elemento) => {
         //console.log(elemento.dataset.estatistica)  //teste para verificar se esta percorrendo o elemento html
         //console.log(elemento.textContent)          //teste para verificar o conteudo do texto que nesse caso seria força, energia...
 
@@ -75,7 +75,7 @@ const btnPrev = document.querySelector('#prev')
 let currentSlide = 0;
 
 function hideSlider() {
-    robos.forEach(item => item.classList.remove('on')) 
+    robos.forEach(item => item.classList.remove('on'))
 }
 
 function showSlider() {
@@ -84,7 +84,7 @@ function showSlider() {
 
 function nextSlider() {
     hideSlider()
-    if(currentSlide === robos.length -1) {
+    if (currentSlide === robos.length - 1) {
         currentSlide = 0
     } else {
         currentSlide++
@@ -94,8 +94,8 @@ function nextSlider() {
 
 function prevSlider() {
     hideSlider()
-    if(currentSlide === 0) {
-        currentSlide = robos.length -1
+    if (currentSlide === 0) {
+        currentSlide = robos.length - 1
     } else {
         currentSlide--
     }
